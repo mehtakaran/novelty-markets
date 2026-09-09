@@ -145,6 +145,25 @@ async function main() {
       const shortlistedIds = shortlisted.map((c) => c.sourceItemId);
       report("shortlists the clear, resolvable award-show item", shortlistedIds.includes("eval-triage-clear") ? true : "warn", JSON.stringify(shortlistedIds));
       report("does not shortlist the vague/unresolvable item", !shortlistedIds.includes("eval-triage-vague") ? true : "warn", JSON.stringify(shortlistedIds));
+
+      // Membership alone isn't enough: a shortlisted item with missing/broken fields is still
+      // a bug, just one that "is it in the array" can't see. These are hard checks, not warns,
+      // since they're checking structural completeness, not a judgment call that could go
+      // either way. (This is exactly the shape of bug that slipped through before: the model
+      // left resolutionDate null instead of computing it, and the item still got shortlisted.)
+      const clearItem = shortlisted.find((c) => c.sourceItemId === "eval-triage-clear");
+      if (clearItem) {
+        const hasRealDate = clearItem.resolutionDate !== null && !Number.isNaN(Date.parse(clearItem.resolutionDate));
+        report("shortlisted item has a real, parseable resolutionDate (not left null)", hasRealDate, String(clearItem.resolutionDate));
+        report(
+          "shortlisted item has resolutionCriteria filled in",
+          clearItem.resolutionCriteria !== null && clearItem.resolutionCriteria.trim().length > 0,
+          String(clearItem.resolutionCriteria)
+        );
+        report("shortlisted item's marketQuestion looks like a question", clearItem.marketQuestion.trim().endsWith("?"), clearItem.marketQuestion);
+        report("shortlisted item's category is filled in", clearItem.category.trim().length > 0, clearItem.category);
+        report("shortlisted item's reasoning is more than a token gesture", clearItem.triageReasoning.trim().length > 15, clearItem.triageReasoning);
+      }
     } catch (err) {
       report("triage call succeeds", false, (err as Error).message);
     }
