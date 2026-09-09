@@ -1,0 +1,72 @@
+[
+  {
+    "sourceItemId": "social-001",
+    "headline": "everyone in my feed suddenly talking about the emmys again, salt lake sweeping every prediction thread",
+    "detail": "platform: X, engagement: very high (140k+ posts in 24h)",
+    "observedAt": "2026-09-05T09:00:00Z",
+    "engagementSignal": "very high engagement, 140k+ posts/24h"
+  },
+  {
+    "sourceItemId": "social-002",
+    "headline": "ok does ANYONE know when the tour tickets actually drop bc my group chat is losing it",
+    "detail": "platform: TikTok, engagement: high, mostly speculation with no confirmed date",
+    "observedAt": "2026-09-05T09:20:00Z",
+    "engagementSignal": "high engagement, no confirmed date"
+  },
+  {
+    "sourceItemId": "social-003",
+    "headline": "spelling bee twitter is already doing bracket predictions and it's not even close to the finals",
+    "detail": "platform: X, engagement: moderate but consistent niche community",
+    "observedAt": "2026-09-05T07:15:00Z",
+    "engagementSignal": "moderate, consistent niche engagement"
+  },
+  {
+    "sourceItemId": "social-004",
+    "headline": "the way this whole timeline has picked a side in the celeb dating thing without ONE confirmed fact",
+    "detail": "platform: X, engagement: very high but entirely speculative",
+    "observedAt": "2026-09-05T10:15:00Z",
+    "engagementSignal": "very high but speculative, no verifiable facts"
+  },
+  {
+    "sourceItemId": "social-005",
+    "headline": "book prize longlist discourse is unhinged this year, everyone has a pick",
+    "detail": "platform: Reddit, engagement: moderate, active thread with informed community",
+    "observedAt": "2026-09-04T21:00:00Z",
+    "engagementSignal": "moderate, informed community discussion"
+  },
+  {
+    "sourceItemId": "social-006",
+    "headline": "praying for everyone near the border rn this is terrifying to watch unfold live",
+    "detail": "platform: X, engagement: very high, tied to the overnight border skirmish",
+    "observedAt": "2026-09-05T07:05:00Z",
+    "engagementSignal": "very high, crisis-driven"
+  },
+  {
+    "sourceItemId": "social-007",
+    "headline": "central bank succession chatter is now a whole cottage industry on fintwit",
+    "detail": "platform: X, engagement: moderate, finance-focused audience",
+    "observedAt": "2026-09-05T08:00:00Z",
+    "engagementSignal": "moderate, niche finance audience"
+  },
+  {
+    "sourceItemId": "social-008",
+    "headline": "no because the pm confidence vote clock literally just started and my fyp is already doing the math on 90 days",
+    "detail": "platform: TikTok, engagement: high, political audience actively tracking the deadline",
+    "observedAt": "2026-09-04T23:00:00Z",
+    "engagementSignal": "high engagement, actively tracking a fixed deadline"
+  },
+  {
+    "sourceItemId": "social-009",
+    "headline": "just a normal tuesday scrolling and somehow three separate weather posts about how weird it's been",
+    "detail": "platform: X, engagement: low, generic commentary",
+    "observedAt": "2026-09-04T13:00:00Z",
+    "engagementSignal": "low engagement, generic"
+  },
+  {
+    "sourceItemId": "social-010",
+    "headline": "title defense hype video just dropped and the comments are already 90% picking the champ to repeat",
+    "detail": "platform: TikTok, engagement: high, fixed-date title match",
+    "observedAt": "2026-09-05T11:10:00Z",
+    "engagementSignal": "high engagement, fixed-date event"
+  }
+]

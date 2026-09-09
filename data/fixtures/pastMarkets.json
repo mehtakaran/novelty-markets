@@ -1,0 +1,50 @@
+[
+  {
+    "marketQuestion": "Will the incumbent mayor win re-election this November?",
+    "category": "politics",
+    "decision": "approved",
+    "reason": "Broad public interest, fixed election date, clear resolution (winner declared on election night). No sensitive-topic overlap."
+  },
+  {
+    "marketQuestion": "Will Mara Voss be sentenced to jail time following their ongoing trial?",
+    "category": "celebrity",
+    "decision": "flagged_then_approved",
+    "reason": "Trader judged this as legitimate public-interest coverage of a public legal proceeding with a fixed verdict date, not gratuitous — approved with a note to re-check tone of market copy before publish."
+  },
+  {
+    "marketQuestion": "Will casualties from the regional flooding exceed initial estimates?",
+    "category": "current-events",
+    "decision": "rejected",
+    "reason": "Directly frames a live tragedy/casualty event as a betting market. Rejected outright regardless of public interest."
+  },
+  {
+    "marketQuestion": "Will the two rumored partners be seen together at next month's premiere?",
+    "category": "celebrity",
+    "decision": "rejected",
+    "reason": "No verifiable resolution criteria — 'seen together' is too subjective and unresolvable without a clear, checkable event."
+  },
+  {
+    "marketQuestion": "Will the archbishop's planned visit go ahead as scheduled?",
+    "category": "religion",
+    "decision": "rejected",
+    "reason": "Falls under the standing religion exclusion regardless of how newsworthy the visit is."
+  },
+  {
+    "marketQuestion": "Will this year's Booker Prize go to a debut novelist?",
+    "category": "culture",
+    "decision": "approved",
+    "reason": "Fixed announcement date, clear binary resolution, strong cultural interest. Straightforward approval."
+  },
+  {
+    "marketQuestion": "Will the proposed casino license be approved by the South Australian gaming board?",
+    "category": "business",
+    "decision": "rejected",
+    "reason": "South Australia is an excluded jurisdiction for novelty markets; rejected on jurisdiction grounds alone."
+  },
+  {
+    "marketQuestion": "Will the lead singer's solo album debut at #1?",
+    "category": "entertainment",
+    "decision": "flagged_then_approved",
+    "reason": "Initially flagged because chart week boundaries were ambiguous; approved after trader confirmed the official chart-tracking service's fixed weekly cutoff as the resolution source."
+  }
+]

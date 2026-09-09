@@ -31,10 +31,14 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env.local
 
 # vercel
 .vercel
+
+# local sqlite data (regenerated + reseeded on first run)
+/data/*.sqlite
+*.db
 
 # typescript
 *.tsbuildinfo

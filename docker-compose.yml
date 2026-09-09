@@ -1,0 +1,53 @@
+# Temporal's infra, containerized (mirrors Temporal's own official docker-compose reference):
+# Postgres-backed server, Web UI, and admin-tools. The app and worker still run natively
+# (npm run dev / npm run worker) and connect over the host-mapped port — see README.
+#
+# Deliberately NOT included: Elasticsearch (Temporal's "advanced visibility" feature — search
+# attributes, richer workflow listing) adds a real chunk of RAM/startup time for zero benefit to
+# this prototype's demo path, which never uses it.
+services:
+  postgresql:
+    # Alpine variant, not the Debian-based `postgres:15` — that one fails initdb
+    # ("popen failure: Operation not permitted") on this machine's Docker Engine version.
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: temporal
+      POSTGRES_PASSWORD: temporal
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  temporal:
+    image: temporalio/auto-setup:latest
+    depends_on:
+      - postgresql
+    environment:
+      - DB=postgres12
+      - DB_PORT=5432
+      - POSTGRES_USER=temporal
+      - POSTGRES_PWD=temporal
+      - POSTGRES_SEEDS=postgresql
+    ports:
+      - "7233:7233" # gRPC frontend — app/worker connect here as localhost:7233
+
+  temporal-ui:
+    image: temporalio/ui:latest
+    depends_on:
+      - temporal
+    environment:
+      - TEMPORAL_ADDRESS=temporal:7233
+      - TEMPORAL_CORS_ORIGINS=http://localhost:3000
+    ports:
+      - "8233:8080" # kept on 8233 to match the rest of this project's docs/links
+
+  temporal-admin-tools:
+    image: temporalio/admin-tools:latest
+    depends_on:
+      - temporal
+    environment:
+      - TEMPORAL_ADDRESS=temporal:7233
+    stdin_open: true
+    tty: true
+    # e.g. `docker compose exec temporal-admin-tools temporal workflow list`
+
+volumes:
+  postgres-data:

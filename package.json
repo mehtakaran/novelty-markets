@@ -3,24 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -n infra,setup,worker,next -c magenta,yellow,cyan,green \"npm:temporal:server\" \"npm:temporal:setup\" \"npm:worker\" \"npm:next:dev\"",
+    "next:dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "temporal:server": "docker compose up",
+    "temporal:server:down": "docker compose down",
+    "reset": "bash scripts/reset.sh",
+    "worker": "dotenv -e .env.local -- tsx temporal/worker.ts",
+    "temporal:setup": "dotenv -e .env.local -- tsx temporal/setup-schedules.ts",
+    "eval": "dotenv -e .env.local -- tsx evals/run.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
+    "@temporalio/client": "^1.23.0",
+    "@temporalio/worker": "^1.23.0",
+    "@temporalio/workflow": "^1.23.0",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^22.20.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^10.0.5",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }

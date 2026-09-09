@@ -1,0 +1,137 @@
+<mxGraphModel dx="934" dy="510" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="560" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="trigger" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;fontStyle=1;" value="Trigger&#xa;Trader click, or&#xa;8:00 / 15:00 daily" vertex="1">
+      <mxGeometry height="90" width="160" x="40" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="discovery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="Discovery&lt;br&gt;merges News, Social &amp;amp; Trending&lt;br&gt;feeds + prompt injection guard" vertex="1">
+      <mxGeometry height="90" width="190" x="240" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="triage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" value="Triage (LLM)&lt;br&gt;shortlist worth-a-market items" vertex="1">
+      <mxGeometry height="90" width="190" x="530" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="tier1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="Tier 1 Rules&lt;br&gt;war / tragedy / religion,&lt;br&gt;jurisdiction, no verifiable date" vertex="1">
+      <mxGeometry height="90" width="190" x="820" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="tier2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" value="Tier 2 Judgment (LLM)" vertex="1">
+      <mxGeometry height="90" width="180" x="1030" y="40" as="geometry" />
+    </mxCell>
+    <mxCell id="pricelookup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="Price Lookup&#xa;(deterministic)&#xa;matches an existing&#xa;reference market" vertex="1">
+      <mxGeometry height="90" width="190" x="1250" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="priceestimate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" value="Price Estimate (LLM)" vertex="1">
+      <mxGeometry height="90" width="180" x="1460" y="40" as="geometry" />
+    </mxCell>
+    <mxCell id="review" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;" value="Trader Review Queue&lt;br&gt;shows every candidate either&lt;br&gt;pass, flag, or block.&lt;br&gt;Override needs a reason." vertex="1">
+      <mxGeometry height="90" width="210" x="1670" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="publish" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" value="Publish" vertex="1">
+      <mxGeometry height="70" width="170" x="1980" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="rejected" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;" value="Rejected&lt;br&gt;decision + reason logged,&lt;br&gt;no market goes live" vertex="1">
+      <mxGeometry height="80" width="200" x="1980" y="320" as="geometry" />
+    </mxCell>
+    <mxCell id="livemarket" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;gradientColor=none;" value="Live Market" vertex="1">
+      <mxGeometry height="70" width="150" x="2200" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="pricemonitor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" value="Price Monitor&lt;br&gt;hourly / on-demand" vertex="1">
+      <mxGeometry height="70" width="150" x="2200" y="325" as="geometry" />
+    </mxCell>
+    <mxCell id="monitoringpage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" value="Monitoring Page&#xa;flags anything outside ±10%&#xa;vs. a competitor price" vertex="1">
+      <mxGeometry height="70" width="200" x="1980" y="450" as="geometry" />
+    </mxCell>
+    <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontSize=11;fontStyle=2;align=left;spacingLeft=8;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Purple = LLM.&lt;br&gt;Blue = deterministic logic.&lt;br&gt;Orange = trader-facing UI.&lt;br&gt;Red = a dead end.&lt;/font&gt;" vertex="1">
+      <mxGeometry height="130" width="160" x="40" y="400" as="geometry" />
+    </mxCell>
+    <mxCell id="e1" edge="1" parent="1" source="trigger" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="discovery">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" edge="1" parent="1" source="discovery" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="triage">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-4" connectable="0" parent="e2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Batch" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e3" edge="1" parent="1" source="triage" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="tier1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-3" connectable="0" parent="e3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Shortlisted" vertex="1">
+      <mxGeometry relative="1" x="0.02" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e4" edge="1" parent="1" source="tier1" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#9673A6;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="tier2">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-5" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Not blocked" vertex="1">
+      <mxGeometry relative="1" x="-0.0095" y="2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e5" edge="1" parent="1" source="tier1" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="pricelookup">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-7" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Blocked" vertex="1">
+      <mxGeometry relative="1" x="-0.0167" y="1" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e6" edge="1" parent="1" source="tier2" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#9673A6;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="pricelookup">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e7" edge="1" parent="1" source="pricelookup" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#9673A6;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="priceestimate">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-9" connectable="0" parent="e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No Match" vertex="1">
+      <mxGeometry relative="1" x="-0.0095" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e8" edge="1" parent="1" source="pricelookup" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="review">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-8" connectable="0" parent="e8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Matched" vertex="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e9" edge="1" parent="1" source="priceestimate" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#9673A6;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="review">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e10" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#2D7D46;strokeWidth=2;" target="publish">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-10" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Approve/Override" vertex="1">
+      <mxGeometry relative="1" x="0.025" y="1" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e11" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#B85450;strokeWidth=2;" target="rejected">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="hF_qoiFkqtDw7yx8pYeo-11" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Reject" vertex="1">
+      <mxGeometry relative="1" x="-0.0057" y="1" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e12" edge="1" parent="1" source="publish" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="livemarket">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e13" edge="1" parent="1" source="livemarket" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="pricemonitor">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="e13lbl" connectable="0" parent="e13" style="edgeLabel;html=1;fontSize=9;labelBackgroundColor=#ffffff;" value="reads price" vertex="1">
+      <mxGeometry relative="1" y="-14" as="geometry" />
+    </mxCell>
+    <mxCell id="e14" edge="1" parent="1" source="pricemonitor" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;strokeColor=#333333;strokeWidth=1.5;" target="monitoringpage">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="2275" y="485" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

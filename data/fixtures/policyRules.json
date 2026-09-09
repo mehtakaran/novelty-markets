@@ -1,0 +1,31 @@
+{
+  "blockedTopics": [
+    {
+      "ruleId": "topic-war",
+      "label": "War / armed conflict",
+      "keywords": ["war", "invasion", "military conflict", "airstrike", "bombing", "ceasefire", "skirmish", "border conflict"]
+    },
+    {
+      "ruleId": "topic-tragedy",
+      "label": "Tragedy / mass casualty event",
+      "keywords": ["tragedy", "mass shooting", "terrorist attack", "explosive device", "death toll", "fatalities", "casualties", "disaster"]
+    },
+    {
+      "ruleId": "topic-religion",
+      "label": "Religion",
+      "keywords": ["religion", "religious", "church", "pope", "islam", "christianity", "judaism", "religious leader"]
+    }
+  ],
+  "blockedJurisdictions": [
+    {
+      "ruleId": "jurisdiction-sa",
+      "label": "South Australia (excluded jurisdiction)",
+      "keywords": ["south australia", "adelaide"]
+    }
+  ],
+  "requiresVerifiableResolution": {
+    "ruleId": "no-verifiable-source",
+    "label": "No verifiable resolution source",
+    "description": "Every market must have a fixed resolution date and clear, checkable resolution criteria."
+  }
+}

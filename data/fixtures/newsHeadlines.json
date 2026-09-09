@@ -1,0 +1,110 @@
+[
+  {
+    "sourceItemId": "news-001",
+    "headline": "Streaming darling 'Salt Lake' leads all series with 14 Emmy nominations",
+    "detail": "The limited series picked up nods across every major category. Voting closes in six weeks, ceremony date confirmed by the Television Academy.",
+    "observedAt": "2026-09-05T08:10:00Z"
+  },
+  {
+    "sourceItemId": "news-002",
+    "headline": "Central bank governor's term expires next spring, succession speculation builds",
+    "detail": "Three names are being floated by finance ministry sources, no formal nomination process announced yet.",
+    "observedAt": "2026-09-05T07:40:00Z"
+  },
+  {
+    "sourceItemId": "news-003",
+    "headline": "Border skirmish escalates overnight, casualties reported on both sides",
+    "detail": "Regional military officials confirm exchanges of fire along the contested frontier; foreign ministries are convening emergency talks.",
+    "observedAt": "2026-09-05T06:55:00Z"
+  },
+  {
+    "sourceItemId": "news-004",
+    "headline": "Pop superstar confirms world tour, ticket presale details expected 'soon'",
+    "detail": "No official date has been set for tickets or tour stops; management says an announcement is 'in the works'.",
+    "observedAt": "2026-09-05T09:02:00Z"
+  },
+  {
+    "sourceItemId": "news-005",
+    "headline": "Ruling party loses key by-election, PM faces internal leadership pressure",
+    "detail": "Party rules require a confidence vote within 90 days if a sitting PM's approval falls below threshold; that clock has now started.",
+    "observedAt": "2026-09-04T22:30:00Z"
+  },
+  {
+    "sourceItemId": "news-006",
+    "headline": "Wildfire season 'unusually active' this year, officials say",
+    "detail": "General commentary on seasonal fire conditions, no single event or resolvable claim.",
+    "observedAt": "2026-09-04T19:15:00Z"
+  },
+  {
+    "sourceItemId": "news-007",
+    "headline": "Format-defending champion enters this year's National Spelling Bee as favorite",
+    "detail": "Bee finals air live in eight weeks; champion crowned on stage the same night.",
+    "observedAt": "2026-09-05T05:20:00Z"
+  },
+  {
+    "sourceItemId": "news-008",
+    "headline": "Two A-list actors spotted together again, dating rumours intensify",
+    "detail": "Neither party's publicist has commented; tabloid speculation only, no verifiable timeline for confirmation or denial.",
+    "observedAt": "2026-09-05T10:05:00Z"
+  },
+  {
+    "sourceItemId": "news-009",
+    "headline": "Religious leader's upcoming address draws record advance interest",
+    "detail": "Content of the address is undisclosed; large public gathering expected.",
+    "observedAt": "2026-09-04T14:40:00Z"
+  },
+  {
+    "sourceItemId": "news-010",
+    "headline": "Reigning champion enters title defense as narrow favorite, oddsmakers say",
+    "detail": "Title match has a fixed date next month with a single elimination format; a winner is guaranteed on the night.",
+    "observedAt": "2026-09-05T11:00:00Z"
+  },
+  {
+    "sourceItemId": "news-011",
+    "headline": "City council to vote on controversial rezoning plan next Tuesday",
+    "detail": "Local issue, narrow public interest beyond the immediate district, outcome is a simple council vote.",
+    "observedAt": "2026-09-04T16:00:00Z"
+  },
+  {
+    "sourceItemId": "news-012",
+    "headline": "Tech founder teases 'major announcement' for next week",
+    "detail": "No specifics on what will be announced or whether it constitutes a resolvable yes/no event.",
+    "observedAt": "2026-09-05T09:45:00Z"
+  },
+  {
+    "sourceItemId": "news-013",
+    "headline": "Flooding displaces thousands, death toll expected to rise, officials warn",
+    "detail": "Ongoing humanitarian response; rescue operations continue in affected regions.",
+    "observedAt": "2026-09-05T03:20:00Z"
+  },
+  {
+    "sourceItemId": "news-014",
+    "headline": "Award-season frontrunner's studio mounts aggressive campaign ahead of nominations",
+    "detail": "Nominations announced in five weeks on a fixed date; winner announced at the televised ceremony ten weeks after that.",
+    "observedAt": "2026-09-05T08:55:00Z"
+  },
+  {
+    "sourceItemId": "news-015",
+    "headline": "Cabinet reshuffle expected within days as coalition talks continue",
+    "detail": "Sources close to the coalition say an announcement is imminent; no confirmed date yet, situation still fluid hour to hour.",
+    "observedAt": "2026-09-05T11:30:00Z"
+  },
+  {
+    "sourceItemId": "news-016",
+    "headline": "Debut novelist's 'Marlow Bay' sends sales soaring ahead of major book prize",
+    "detail": "Prize shortlist announced in three weeks, winner announced at a gala six weeks after that — both fixed dates.",
+    "observedAt": "2026-09-04T20:10:00Z"
+  },
+  {
+    "sourceItemId": "news-017",
+    "headline": "Local weather pattern called 'unusual for the season' by meteorologists",
+    "detail": "General trend commentary, no single resolvable claim or date attached.",
+    "observedAt": "2026-09-04T12:00:00Z"
+  },
+  {
+    "sourceItemId": "news-018",
+    "headline": "Explosive device detonated near government building, casualties confirmed",
+    "detail": "Authorities have opened a terrorism investigation; area remains cordoned off.",
+    "observedAt": "2026-09-05T02:10:00Z"
+  }
+]

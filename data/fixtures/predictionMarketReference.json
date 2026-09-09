@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ref-001",
+    "question": "Will Salt Lake win Outstanding Limited Series at the Emmys?",
+    "category": "awards",
+    "impliedPrice": 0.62,
+    "source": "Kalshi-style exchange",
+    "volume": 48000
+  },
+  {
+    "id": "ref-002",
+    "question": "Will the reigning champion successfully defend their title in the upcoming match?",
+    "category": "sports-adjacent",
+    "impliedPrice": 0.58,
+    "source": "Polymarket-style exchange",
+    "volume": 61000
+  },
+  {
+    "id": "ref-003",
+    "question": "Will the defending Spelling Bee champion win the title again this year?",
+    "category": "culture",
+    "impliedPrice": 0.21,
+    "source": "Kalshi-style exchange",
+    "volume": 6200
+  },
+  {
+    "id": "ref-004",
+    "question": "Will a ceasefire be declared in the border conflict within 30 days?",
+    "category": "geopolitics",
+    "impliedPrice": 0.33,
+    "source": "Polymarket-style exchange",
+    "volume": 92000
+  },
+  {
+    "id": "ref-005",
+    "question": "Will the ruling party's Prime Minister survive a confidence vote this term?",
+    "category": "politics",
+    "impliedPrice": 0.47,
+    "source": "Kalshi-style exchange",
+    "volume": 71000
+  },
+  {
+    "id": "ref-006",
+    "question": "Will the two actors publicly confirm a relationship this year?",
+    "category": "celebrity",
+    "impliedPrice": 0.29,
+    "source": "Polymarket-style exchange",
+    "volume": 15400
+  },
+  {
+    "id": "ref-007",
+    "question": "Will the pop superstar announce official tour dates this month?",
+    "category": "entertainment",
+    "impliedPrice": 0.41,
+    "source": "Kalshi-style exchange",
+    "volume": 9800
+  }
+]

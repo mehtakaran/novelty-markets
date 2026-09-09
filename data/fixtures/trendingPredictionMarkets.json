@@ -1,0 +1,72 @@
+[
+  {
+    "sourceItemId": "trend-001",
+    "headline": "\"Will 'Salt Lake' win Outstanding Limited Series?\" trending #2 by volume this week",
+    "detail": "Cross-platform prediction-market trend feed, high volume growth over 7 days",
+    "observedAt": "2026-09-05T06:00:00Z",
+    "engagementSignal": "trending #2 by volume, high 7-day growth"
+  },
+  {
+    "sourceItemId": "trend-002",
+    "headline": "\"Will the ruling party PM survive a confidence vote this term?\" new market up 300% in volume",
+    "detail": "Cross-platform prediction-market trend feed, volume spiking after the by-election loss",
+    "observedAt": "2026-09-05T07:30:00Z",
+    "engagementSignal": "volume up 300% in 24h"
+  },
+  {
+    "sourceItemId": "trend-003",
+    "headline": "\"Will the champion successfully defend the title?\" steady top-10 volume market",
+    "detail": "Cross-platform prediction-market trend feed, consistently high volume ahead of fixed title match",
+    "observedAt": "2026-09-05T10:30:00Z",
+    "engagementSignal": "consistent top-10 volume"
+  },
+  {
+    "sourceItemId": "trend-004",
+    "headline": "\"Will 'Marlow Bay' win this year's major fiction prize?\" new market trending in culture category",
+    "detail": "Cross-platform prediction-market trend feed, moderate but rising volume",
+    "observedAt": "2026-09-04T21:30:00Z",
+    "engagementSignal": "moderate, rising volume"
+  },
+  {
+    "sourceItemId": "trend-005",
+    "headline": "\"Will a ceasefire be declared within 30 days?\" market volume spikes amid border escalation",
+    "detail": "Cross-platform prediction-market trend feed, high volume tied directly to the active conflict",
+    "observedAt": "2026-09-05T07:10:00Z",
+    "engagementSignal": "high volume, conflict-driven"
+  },
+  {
+    "sourceItemId": "trend-006",
+    "headline": "\"Will the central bank name a successor before year end?\" thin-volume speculative market",
+    "detail": "Cross-platform prediction-market trend feed, low volume, no formal nomination process exists yet",
+    "observedAt": "2026-09-05T08:20:00Z",
+    "engagementSignal": "low volume, speculative"
+  },
+  {
+    "sourceItemId": "trend-007",
+    "headline": "\"Will this year's Spelling Bee champion successfully defend their title?\" niche but active market",
+    "detail": "Cross-platform prediction-market trend feed, small but consistently active niche audience",
+    "observedAt": "2026-09-05T05:45:00Z",
+    "engagementSignal": "small, consistently active niche"
+  },
+  {
+    "sourceItemId": "trend-008",
+    "headline": "\"Will the two actors confirm a relationship publicly this year?\" high-volume gossip market",
+    "detail": "Cross-platform prediction-market trend feed, high volume but resolution criteria disputed by traders",
+    "observedAt": "2026-09-05T10:20:00Z",
+    "engagementSignal": "high volume, contested resolution criteria"
+  },
+  {
+    "sourceItemId": "trend-009",
+    "headline": "\"Will there be a cabinet reshuffle announced this month?\" volatile, fast-moving market",
+    "detail": "Cross-platform prediction-market trend feed, price swinging heavily hour to hour, no fixed date",
+    "observedAt": "2026-09-05T11:35:00Z",
+    "engagementSignal": "high volatility, no fixed resolution date"
+  },
+  {
+    "sourceItemId": "trend-010",
+    "headline": "\"Will the pop tour dates be announced this month?\" growing but unresolved-timeline market",
+    "detail": "Cross-platform prediction-market trend feed, growing volume, no official timeline confirmed",
+    "observedAt": "2026-09-05T09:10:00Z",
+    "engagementSignal": "growing volume, unresolved timeline"
+  }
+]
