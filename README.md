@@ -41,6 +41,36 @@ answer, every trader decision. Nothing happens quietly in the background.
 
 There's also a diagram of this whole flow at [`docs/workflow-diagram.drawio`](docs/workflow-diagram.drawio). Open it at [draw.io](https://app.diagrams.net) if you want a picture instead of words.
 
+## The guardrails around the AI
+
+The AI is genuinely useful here, but it's never trusted blindly. A few rules keep it in
+check:
+
+- **Hard rules always run first, and the AI can't overrule them.** War, tragedy, religion,
+  excluded jurisdictions, and missing a verifiable resolution date are checked by plain code,
+  not the AI, before the AI ever sees the story. If one of those rules blocks something,
+  that's final.
+- **The AI's compliance opinion can only add caution, never remove it.** If a deterministic
+  check already flagged a story as suspicious (see the next point), the AI's own judgment
+  gets added to that flag. It can never quietly downgrade it back to a pass.
+- **A prompt injection check runs before anything reaches the AI at all.** News and social
+  posts come from the open internet, not from the trader, so they're treated as data to
+  read, never as instructions to follow. A plain pattern match scans for phrases like
+  "ignore previous instructions" before that text is ever sent to the model, and every
+  prompt tells the model the same thing directly.
+- **Every AI answer is checked against a strict shape before anything trusts it.** A missing
+  field, a price out of range, or a broken response is treated as a failure and logged as
+  one, not quietly patched up to look fine.
+- **An AI failure is never treated as a quiet pass.** If the compliance check fails to run,
+  the story gets flagged for a human to look at, not waved through. If the price estimate
+  fails, it falls back to a clearly labeled placeholder, not a confident-looking number.
+- **AI-estimated prices always look different from sourced ones.** A different badge color
+  and an explicit "this is a guess" label, so a trader can never mistake a soft guess for a
+  real market price.
+- **The AI's compliance judgment is a recommendation, full stop.** It never publishes
+  anything by itself. A trader's explicit decision is required no matter what any AI call
+  concluded.
+
 ## Why this app uses Temporal
 
 Step 5 above (asking a human) is the tricky part. A trader might approve a market in ten
