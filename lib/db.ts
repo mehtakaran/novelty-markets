@@ -1,5 +1,5 @@
-// All the app's data lives in one SQLite file, using Node's built-in node:sqlite module —
-// no extra database package to install. Every page (Review Queue, Monitoring, Audit Log)
+// All the app's data lives in one SQLite file, using Node's built-in node:sqlite module,
+// so there's no extra database package to install. Every page (Review Queue, Monitoring, Audit Log)
 // reads from here, and the Temporal activities are the only code that writes to it.
 
 import { DatabaseSync } from "node:sqlite";
@@ -310,6 +310,12 @@ export function getLiveMarkets(): LiveMarketRow[] {
     ourPrice: row.our_price as number,
     publishedAt: row.published_at as string,
   }));
+}
+
+/** Adopts a new price for a live market, e.g. when a trader accepts a competitor-price alert. */
+export function updateLiveMarketPrice(id: string, newPrice: number): void {
+  const db = getDb();
+  db.prepare(`UPDATE live_markets SET our_price = ? WHERE id = ?`).run(newPrice, id);
 }
 
 export function insertCompetitorCheck(row: Omit<CompetitorCheckRow, "id">): void {

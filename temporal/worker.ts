@@ -1,6 +1,6 @@
 // A standalone process that polls Temporal's task queue and actually runs the workflow and
-// activity code. Needs to be running alongside the Temporal server and the Next.js app — see
-// README for how to start everything together.
+// activity code. Needs to be running alongside the Temporal server and the Next.js app. See
+// the README for how to start everything together.
 //
 // Run with: npm run worker (or as the `worker` service in docker-compose.yml)
 
@@ -9,9 +9,9 @@ import * as activities from "./activities";
 import { config } from "@/lib/config";
 
 // The worker uses its own NativeConnection type (different from @temporalio/client's
-// Connection used elsewhere) — retries for the same reason as connectWithRetry in
+// Connection used elsewhere). It retries for the same reason as connectWithRetry in
 // temporal/client.ts: in Docker Compose, Temporal's gRPC port isn't ready right away.
-// 90 tries x 3s = 4.5 minutes — plenty of room for a cold `docker compose up` (pulling images
+// 90 tries x 3s = 4.5 minutes, plenty of room for a cold `docker compose up` (pulling images
 // plus that first-run Postgres migration). Every run after the first connects in a few seconds.
 async function connectWithRetry(maxAttempts = 90, delayMs = 3000): Promise<NativeConnection> {
   let lastErr: unknown;

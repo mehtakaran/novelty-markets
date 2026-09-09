@@ -1,5 +1,5 @@
 // Step 3, the deterministic half: if a similar market already exists in the reference data,
-// just use its price. This is plain keyword/category overlap scoring — no AI needed to look
+// just use its price. This is plain keyword/category overlap scoring. No AI needed to look
 // something up that's already sitting in a table.
 
 import predictionMarketReference from "@/data/fixtures/predictionMarketReference.json";

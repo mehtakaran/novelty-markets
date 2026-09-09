@@ -4,7 +4,7 @@
 //
 // Each function here is a small wrapper: call into lib/deterministic or lib/ai, write the
 // result to the DB, log it to the audit trail. For the AI ones specifically, a failure never
-// gets treated as a pass — we catch it, log it, bump the sweep's failure counter, and hand
+// gets treated as a pass. We catch it, log it, bump the sweep's failure counter, and hand
 // back a clearly-labeled fallback so the rest of the sweep can keep going instead of crashing
 // over one bad model call.
 
@@ -82,7 +82,7 @@ export async function persistCandidateShell(sweepId: string, candidateId: string
 /**
  * Runs the Tier 1 hard rules first. If they don't already block it, runs Tier 2 (the AI
  * judgment call) as well. If the injection screen caught something, the result never goes
- * below "flag," no matter what Tier 2 concludes — and we keep both reasonings, not just one.
+ * below "flag," no matter what Tier 2 concludes, and we keep both reasonings, not just one.
  */
 export async function resolveCompliance(candidateId: string, candidate: TriagedCandidate): Promise<ComplianceResult> {
   const tier1 = runTier1ComplianceCheck(candidate);
@@ -102,11 +102,11 @@ export async function resolveCompliance(candidateId: string, candidate: TriagedC
     tier2 = {
       status: "flag",
       tier: 2,
-      reasoning: `AI compliance judgment failed (${(error as Error).message}). Flagged automatically for mandatory manual review — an AI failure is never treated as a pass.`,
+      reasoning: `AI compliance judgment failed (${(error as Error).message}). Flagged automatically for mandatory manual review, since an AI failure is never treated as a pass.`,
     };
   }
 
-  // The injection screen is an overlay on top of Tier 1, not a hard block by itself — combine
+  // The injection screen is an overlay on top of Tier 1, not a hard block by itself. We combine
   // it with Tier 2's independent judgment rather than letting either one silently win.
   const final: ComplianceResult =
     tier1.status === "flag"
@@ -135,7 +135,7 @@ export async function resolvePricing(candidateId: string, candidate: TriagedCand
     estimated = {
       value: 0.5,
       source: "estimated",
-      reasoning: `AI price estimate failed (${(error as Error).message}). Defaulted to a neutral 0.5 placeholder — needs manual pricing before approval.`,
+      reasoning: `AI price estimate failed (${(error as Error).message}). Defaulted to a neutral 0.5 placeholder, needs manual pricing before approval.`,
     };
   }
   updateCandidatePrice(candidateId, estimated);

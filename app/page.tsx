@@ -14,7 +14,7 @@ export default function ReviewQueuePage() {
       <div className="space-y-1">
         <h1 className="text-lg font-semibold">Trader Review Queue</h1>
         <p className="text-sm text-neutral-900">
-          Every candidate found by discovery stays visible here — approved, rejected, flagged, or blocked — with its full reasoning. Nothing
+          Every candidate found by discovery stays visible here (approved, rejected, flagged, or blocked) with its full reasoning. Nothing
           reaches a live market without an explicit decision below.
         </p>
       </div>

@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   Review Queue
                 </Link>
                 <Link href="/monitoring" className="text-neutral-900 hover:underline underline-offset-2">
-                  Price Monitoring
+                  Live Markets
                 </Link>
                 <Link href="/audit" className="text-neutral-900 hover:underline underline-offset-2">
                   Audit Log

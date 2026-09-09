@@ -16,13 +16,13 @@ export function getTemporalClient(): Promise<Client> {
 }
 
 /**
- * Only meant for startup-time callers — the worker process and the one-shot schedule-setup
- * script — not for API routes, which should fail fast so a button click gives quick feedback.
+ * Only meant for startup-time callers: the worker process and the one-shot schedule-setup
+ * script. Not for API routes, which should fail fast so a button click gives quick feedback.
  * In Docker Compose, Temporal can take a while to actually be ready (Postgres has to finish
  * its schema migration first), so these two callers retry instead of giving up immediately.
  */
-// 90 tries x 3s = 4.5 minutes — plenty of room for a cold `docker compose up` (pulling images
-// plus that first-run Postgres migration). Every run after the first connects in a few seconds.
+// 90 tries x 3s = 4.5 minutes. That's plenty of room for a cold `docker compose up` (pulling
+// images plus that first-run Postgres migration). Every run after the first connects in a few seconds.
 export async function connectWithRetry(maxAttempts = 90, delayMs = 3000): Promise<Connection> {
   let lastErr: unknown;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {

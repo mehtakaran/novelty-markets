@@ -2,7 +2,7 @@
 // +/-10%, both confirmed with the business.
 //
 // There's no real competitor odds feed to poll in this prototype, so each check nudges the
-// competitor price for each market with a small random walk step — that's just simulating
+// competitor price for each market with a small random walk step, just to simulate
 // normal hour-to-hour market movement. The step is seeded off the market id and timestamp so
 // a given run is reproducible. The actual comparison and threshold logic is fully
 // deterministic; only the fake competitor price is randomized.
@@ -10,7 +10,7 @@
 import { config } from "@/lib/config";
 import { getLatestCompetitorCheck, getLiveMarkets, insertCompetitorCheck, insertAudit } from "@/lib/db";
 
-/** Turns a text seed into a number between 0 and 1 — same seed always gives the same result. */
+/** Turns a text seed into a number between 0 and 1. Same seed always gives the same result. */
 function seededRandom(seed: string): number {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {

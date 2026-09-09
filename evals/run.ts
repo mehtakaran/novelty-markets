@@ -1,9 +1,9 @@
-// A lightweight smoke test, not a full eval platform — that's the right size for a
+// A lightweight smoke test, not a full eval platform, which is the right size for a
 // thin-slice prototype. Two kinds of checks:
 //   1. Deterministic cases (free, instant): hard assertions against the Tier 1 rules and the
 //      injection screen. If one of these fails, that's a real regression, so the whole run fails.
 //   2. AI-judgment cases (real API calls): the expected answer here is a best guess, not a
-//      guarantee, since these are genuine judgment calls — a mismatch just prints as a WARN.
+//      guarantee, since these are genuine judgment calls, so a mismatch just prints as a WARN.
 //      But if the model's output doesn't even parse, or the call throws, that's still a FAIL.
 //
 // Run with: npm run eval
@@ -25,7 +25,7 @@ function report(label: string, ok: boolean | "warn", detail: string) {
   if (ok === true) pass++;
   else if (ok === "warn") warn++;
   else fail++;
-  console.log(`[${tag}] ${label}${detail ? ` — ${detail}` : ""}`);
+  console.log(`[${tag}] ${label}${detail ? `: ${detail}` : ""}`);
 }
 
 function candidate(overrides: Partial<TriagedCandidate>): TriagedCandidate {
@@ -121,7 +121,7 @@ async function main() {
 
   const hasApiKey = Boolean(process.env.ANTHROPIC_API_KEY);
   if (!hasApiKey) {
-    console.log("\n(ANTHROPIC_API_KEY not set — skipping AI-judgment cases. Run via `npm run eval` with .env.local configured.)");
+    console.log("\n(ANTHROPIC_API_KEY not set, so skipping AI-judgment cases. Run via `npm run eval` with .env.local configured.)");
   } else {
     console.log("\n--- AI triage (real API calls) ---");
     const batch: RawFeedItem[] = [
@@ -161,7 +161,7 @@ async function main() {
     }
 
     try {
-      // Nothing in the Tier 1 topic/jurisdiction list catches this — it's exactly the kind of
+      // Nothing in the Tier 1 topic/jurisdiction list catches this. It's exactly the kind of
       // borderline case Tier 2 exists for: contestants are minors, which no hard rule flags.
       const borderline = await runTier2ComplianceJudgment(
         candidate({

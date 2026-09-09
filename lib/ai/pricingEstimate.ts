@@ -1,6 +1,6 @@
 // Step 3, the AI fallback: only runs when the deterministic reference-price lookup found
 // nothing to match against. Estimates a starting probability from soft coverage signals. If
-// the call fails, we throw rather than quietly defaulting to "0.5 with full confidence" — see
+// the call fails, we throw rather than quietly defaulting to "0.5 with full confidence." See
 // temporal/activities.ts for how the caller labels that fallback clearly instead.
 
 import { z } from "zod";

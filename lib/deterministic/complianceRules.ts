@@ -1,4 +1,4 @@
-// Step 2, Tier 1: the hard-coded rules. No AI, no ambiguity — these are the checks the
+// Step 2, Tier 1: the hard-coded rules. No AI, no ambiguity. These are the checks the
 // business confirmed always apply. The reasoning we return here is just "which rule fired."
 
 import policyRules from "@/data/fixtures/policyRules.json";
@@ -15,7 +15,7 @@ function escapeRegExp(text: string): string {
 }
 
 /**
- * Matches whole words only, not substrings — "war" shouldn't match inside "award", "pope"
+ * Matches whole words only, not substrings. "war" shouldn't match inside "award", and "pope"
  * shouldn't match inside some unrelated compound word. That's what \b does here, and it still
  * works for multi-word keywords like "south australia" since it matches across the phrase.
  */
@@ -27,7 +27,7 @@ function matchesKeyword(haystack: string, rule: TopicRule): string | null {
 
 /**
  * Blocks the candidate if a hard rule fires. Otherwise it's a Tier 1 pass, which just means
- * "no hard rule blocked it" — the caller still sends it on to Tier 2 for an AI judgment call.
+ * "no hard rule blocked it." The caller still sends it on to Tier 2 for an AI judgment call.
  */
 export function runTier1ComplianceCheck(candidate: TriagedCandidate): ComplianceResult {
   const text = `${candidate.eventDescription} ${candidate.marketQuestion}`;

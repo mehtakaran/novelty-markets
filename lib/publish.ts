@@ -1,4 +1,4 @@
-// Step 5: the mocked "goes live" stub. Deliberately simple — the brief is explicit that a
+// Step 5: the mocked "goes live" stub. Deliberately simple. The brief is explicit that a
 // real publishing integration isn't the point here, and most of the build effort should go
 // elsewhere. The one rule that matters: this is the only function that ever creates a
 // live_markets row, and it only ever runs after a trader has actually approved something

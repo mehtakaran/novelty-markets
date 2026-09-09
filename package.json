@@ -13,7 +13,8 @@
     "reset": "bash scripts/reset.sh",
     "worker": "dotenv -e .env.local -- tsx temporal/worker.ts",
     "temporal:setup": "dotenv -e .env.local -- tsx temporal/setup-schedules.ts",
-    "eval": "dotenv -e .env.local -- tsx evals/run.ts"
+    "eval": "dotenv -e .env.local -- tsx evals/run.ts",
+    "test": "node --import tsx --test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",

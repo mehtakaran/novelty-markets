@@ -54,7 +54,7 @@ export function AuditLogTable({ entries }: { entries: AuditEntry[] }) {
                   </span>
                 </td>
                 <td className="px-4 py-2 font-mono text-xs">{entry.eventType}</td>
-                <td className="px-4 py-2 font-mono text-xs text-neutral-800">{entry.candidateId ?? "—"}</td>
+                <td className="px-4 py-2 font-mono text-xs text-neutral-800">{entry.candidateId ?? "N/A"}</td>
                 <td className="px-4 py-2 text-xs text-neutral-900 max-w-md">
                   <pre className="whitespace-pre-wrap break-words">{JSON.stringify(entry.details, null, 0)}</pre>
                 </td>

@@ -1,6 +1,6 @@
 // Step 2, Tier 2, the AI half: a judgment call for anything the hard-coded topic, jurisdiction,
 // and resolution rules didn't already block. Always comes back as a recommendation with
-// reasoning attached — never a bare score, and never treated as the final word. If the call
+// reasoning attached. Never a bare score, and never treated as the final word. If the call
 // fails, we throw and the caller (temporal/activities.ts) treats that as a failure, not a pass.
 
 import { z } from "zod";

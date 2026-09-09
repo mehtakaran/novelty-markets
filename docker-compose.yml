@@ -1,13 +1,13 @@
 # Temporal's infra, containerized (mirrors Temporal's own official docker-compose reference):
 # Postgres-backed server, Web UI, and admin-tools. The app and worker still run natively
-# (npm run dev / npm run worker) and connect over the host-mapped port — see README.
+# (npm run dev / npm run worker) and connect over the host-mapped port. See README.
 #
-# Deliberately NOT included: Elasticsearch (Temporal's "advanced visibility" feature — search
-# attributes, richer workflow listing) adds a real chunk of RAM/startup time for zero benefit to
-# this prototype's demo path, which never uses it.
+# Deliberately NOT included: Elasticsearch (Temporal's "advanced visibility" feature: search
+# attributes, richer workflow listing) adds a real chunk of RAM and startup time for zero
+# benefit to this prototype's demo path, which never uses it.
 services:
   postgresql:
-    # Alpine variant, not the Debian-based `postgres:15` — that one fails initdb
+    # Alpine variant, not the Debian-based `postgres:15`. That one fails initdb
     # ("popen failure: Operation not permitted") on this machine's Docker Engine version.
     image: postgres:15-alpine
     environment:
@@ -27,7 +27,7 @@ services:
       - POSTGRES_PWD=temporal
       - POSTGRES_SEEDS=postgresql
     ports:
-      - "7233:7233" # gRPC frontend — app/worker connect here as localhost:7233
+      - "7233:7233" # gRPC frontend, app/worker connect here as localhost:7233
 
   temporal-ui:
     image: temporalio/ui:latest

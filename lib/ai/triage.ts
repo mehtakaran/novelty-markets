@@ -1,5 +1,5 @@
 // Step 1, the AI half: take a sweep's raw batch and shortlist the handful worth turning into
-// a market. This is the call that replaces the trader's current gut-feel picking — see
+// a market. This is the call that replaces the trader's current gut-feel picking. See
 // prompts.ts for exactly what criteria we give the model.
 
 import { z } from "zod";
@@ -23,14 +23,14 @@ const triageSchema = z.object({
 
 /**
  * Observed quirk: when the model decides nothing (or nothing more) should be shortlisted, it
- * sometimes emits a placeholder item instead of just leaving the array empty — the reasoning
+ * sometimes emits a placeholder item instead of just leaving the array empty. The reasoning
  * field usually says as much ("placeholder", "should not be included").
  */
 export function isPlaceholderShortlistItem(item: { marketQuestion: string; category: string }): boolean {
   return item.marketQuestion.trim().toLowerCase() === "n/a" || item.category.trim().toLowerCase() === "n/a";
 }
 
-/** Throws AiCallError if the call fails or the model's output doesn't parse — the caller decides how to degrade. */
+/** Throws AiCallError if the call fails or the model's output doesn't parse. The caller decides how to degrade. */
 export async function triageBatch(batch: RawFeedItem[]): Promise<TriagedCandidate[]> {
   if (batch.length === 0) return [];
 

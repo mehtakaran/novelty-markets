@@ -1,6 +1,6 @@
 // Step 1, the deterministic half: just pull items from the three feeds, no judgment yet.
 // This mirrors how the trader already checks news, social, and prediction-market trends by
-// instinct — we're just automating the "go look" part, not the "is this worth it" part.
+// instinct. We're just automating the "go look" part, not the "is this worth it" part.
 
 import newsHeadlines from "@/data/fixtures/newsHeadlines.json";
 import socialTrends from "@/data/fixtures/socialTrends.json";

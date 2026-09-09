@@ -5,7 +5,7 @@
 // deterministic check rather than behind another AI call (that would just reintroduce the
 // exact problem it's supposed to catch).
 //
-// If something matches, we don't try to clean it up or quietly drop it — it just forces a
+// If something matches, we don't try to clean it up or quietly drop it. It just forces a
 // human to review it, the same way a blocked topic would.
 
 const SUSPICIOUS_PATTERNS: RegExp[] = [

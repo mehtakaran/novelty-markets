@@ -1,4 +1,4 @@
-// Sets up the two real cron schedules confirmed with the business — discovery sweeps at
+// Sets up the two real cron schedules confirmed with the business: discovery sweeps at
 // 8:00/15:00 daily, competitor price checks hourly. Safe to run more than once. The
 // "Run Discovery Sweep" / "Simulate hourly check" buttons in the UI trigger workflows
 // directly for demo purposes; these schedules are what fires them unattended in production.
@@ -11,8 +11,8 @@ import { config } from "@/lib/config";
 
 /**
  * A fresh Temporal server (e.g. after `docker compose up` with a wiped Postgres volume) opens
- * its gRPC port slightly before its "default" namespace finishes registering — a brief but
- * real race. We retry specifically on that error rather than treating it as fatal.
+ * its gRPC port slightly before its "default" namespace finishes registering. It's a brief but
+ * real race, so we retry specifically on that error rather than treating it as fatal.
  */
 async function retryOnNamespaceNotFound<T>(fn: () => Promise<T>, maxAttempts = 15, delayMs = 2000): Promise<T> {
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
@@ -63,8 +63,8 @@ async function upsertSchedule(scheduleId: string, cron: string, workflowType: st
 }
 
 async function main() {
-  // Wait for Temporal's gRPC port to actually be reachable before touching the real client —
-  // in Docker Compose it can take a while (Postgres schema migration) before it's up.
+  // Wait for Temporal's gRPC port to actually be reachable before touching the real client.
+  // In Docker Compose it can take a while (Postgres schema migration) before it's up.
   const probe = await connectWithRetry();
   await probe.close();
 

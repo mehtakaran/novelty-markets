@@ -38,7 +38,7 @@
     <mxCell id="pricemonitor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;" value="Price Monitor&lt;br&gt;hourly / on-demand" vertex="1">
       <mxGeometry height="70" width="150" x="2200" y="325" as="geometry" />
     </mxCell>
-    <mxCell id="monitoringpage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" value="Monitoring Page&#xa;flags anything outside ±10%&#xa;vs. a competitor price" vertex="1">
+    <mxCell id="monitoringpage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" value="Live Market Page&lt;br&gt;flags anything outside ±10%&lt;br&gt;vs. a competitor price" vertex="1">
       <mxGeometry height="70" width="200" x="1980" y="450" as="geometry" />
     </mxCell>
     <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontSize=11;fontStyle=2;align=left;spacingLeft=8;verticalAlign=middle;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Purple = LLM.&lt;br&gt;Blue = deterministic logic.&lt;br&gt;Orange = trader-facing UI.&lt;br&gt;Red = a dead end.&lt;/font&gt;" vertex="1">

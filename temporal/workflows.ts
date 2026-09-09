@@ -1,10 +1,10 @@
-// This is the orchestration layer — it decides the order things happen in, but never touches
+// This is the orchestration layer. It decides the order things happen in, but never touches
 // the database, the AI, or anything else with real side effects directly (that's all in
 // temporal/activities.ts). Temporal runs this file inside a sandboxed, deterministic replay
 // engine, which is why it only imports the activity proxy and Temporal's own primitives.
 //
 // Each shortlisted candidate gets its own long-running workflow: it runs compliance and
-// pricing, then just waits — possibly for hours or days — until a trader approves, rejects, or
+// pricing, then just waits, possibly for hours or days, until a trader approves, rejects, or
 // overrides it. Nothing publishes before that happens. Because the wait state lives on the
 // Temporal server rather than in this process's memory, it survives a worker restart.
 
@@ -38,7 +38,7 @@ export interface CandidateWorkflowInput {
 
 /**
  * One of these runs per shortlisted candidate. It runs compliance and pricing, then just
- * waits for a human decision — publish never happens before that.
+ * waits for a human decision. Publish never happens before that.
  */
 export async function candidateWorkflow(input: CandidateWorkflowInput): Promise<{ published: boolean }> {
   await persistCandidateShell(input.sweepId, input.id, input.candidate);
@@ -63,7 +63,7 @@ export async function candidateWorkflow(input: CandidateWorkflowInput): Promise<
 
 /**
  * Runs twice a day (8:00 / 15:00) and can also be triggered on demand. Kicks off one
- * candidateWorkflow per shortlisted item and doesn't wait around for them — they keep running
+ * candidateWorkflow per shortlisted item and doesn't wait around for them. They keep running
  * (waiting for a human) long after this one finishes, which is why the children use ABANDON
  * instead of Temporal's default of terminating them when the parent completes.
  */
@@ -89,7 +89,7 @@ export async function discoverySweepWorkflow(
   return { itemsIn: batch.length, shortlisted: shortlisted.length };
 }
 
-/** Runs hourly and can also be triggered on demand. Just comparing prices and alerting — no AI. */
+/** Runs hourly and can also be triggered on demand. Just comparing prices and alerting, no AI. */
 export async function priceMonitorWorkflow(): Promise<MonitorCheckOutcome[]> {
   return runCompetitorPriceCheckActivity();
 }
